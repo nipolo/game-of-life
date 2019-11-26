@@ -11,4 +11,4 @@ export const selectCells = createSelector(
 export const selectGameIsReady = createSelector(
   selectFeature,
   (state: AppState) => state.game.gameIsReady
-)
+);

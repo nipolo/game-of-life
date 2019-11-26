@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class NotificationService {
-  constructor() { }
+  constructor() {}
 
   error(message: string) {
     console.log(message);

@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  FormControl
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 
@@ -25,13 +30,18 @@ export class SelectGameComponent implements OnInit {
     private router: Router
   ) {
     this.gameDataForm = fb.group({
-      rows: (this._rowsControl = fb.control('', [Validators.min(5), Validators.max(50)])),
-      columns: (this._columnsControl = fb.control('', [Validators.min(5), Validators.max(50)])),
+      rows: this._rowsControl = fb.control('', [
+        Validators.min(5),
+        Validators.max(50)
+      ]),
+      columns: this._columnsControl = fb.control('', [
+        Validators.min(5),
+        Validators.max(50)
+      ])
     });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   loadGameData() {
     if (!this.gameDataForm.valid) {

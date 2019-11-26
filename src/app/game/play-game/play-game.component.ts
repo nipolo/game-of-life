@@ -25,15 +25,18 @@ export class PlayGameComponent implements OnInit {
     private gameService: GameService,
     private store: Store<AppState>
   ) {
-    this._subscriptions.push(store.select(selectCells).subscribe(cells => this._cells = cells))
+    this._subscriptions.push(
+      store.select(selectCells).subscribe(cells => (this._cells = cells))
+    );
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   loadNextGeneration() {
     const nextGenerationCells = this.gameService.getNextGeneration(this.cells);
 
-    this.store.dispatch(loadNextGenerationCells({ cells: nextGenerationCells }))
+    this.store.dispatch(
+      loadNextGenerationCells({ cells: nextGenerationCells })
+    );
   }
 }

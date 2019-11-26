@@ -1,7 +1,11 @@
 import { createReducer, on } from '@ngrx/store';
 
 import { GameState } from './game.state';
-import { loadGameData, resetGameData, loadNextGenerationCells } from './games.actions';
+import {
+  loadGameData,
+  resetGameData,
+  loadNextGenerationCells
+} from './games.actions';
 
 export const initialState: GameState = <GameState>{
   gameSettings: {
@@ -10,7 +14,7 @@ export const initialState: GameState = <GameState>{
   },
   cells: undefined,
   gameIsReady: false
-}
+};
 
 export const gameReducer = createReducer(
   initialState,
@@ -24,6 +28,7 @@ export const gameReducer = createReducer(
     cells: action.cells
   })),
   on(resetGameData, (state, action) => ({
-    ...state, gameIsReady: false
+    ...state,
+    gameIsReady: false
   }))
 );

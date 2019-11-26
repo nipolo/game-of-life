@@ -1,1 +1,7 @@
-<p>play-game works!</p>
+<div class="grid-row" *ngFor="let row of cells">
+  <div class="grid-cell" [class.alive]="cell.isAlive" *ngFor="let cell of row">
+  </div>
+</div>
+<p>
+  <button class="btn btn-primary" (click)="loadNextGeneration()">Next Generation</button>
+</p>

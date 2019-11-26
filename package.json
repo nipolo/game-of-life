@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "format:write": "prettier \"{src,e2e}/**/*.{ts,json,md}\" --write",
+    "format:test": "prettier \"{src,e2e}/**/*.{ts,json,md}\" --list-different"
   },
   "private": true,
   "dependencies": {
@@ -19,7 +21,9 @@
     "@angular/platform-browser": "~8.0.3",
     "@angular/platform-browser-dynamic": "~8.0.3",
     "@angular/router": "~8.0.3",
+    "@ng-bootstrap/ng-bootstrap": "^5.1.4",
     "@ngrx/store": "^8.5.2",
+    "prettier": "^1.19.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"

@@ -4,3 +4,5 @@ export * from './select-game/select-game.component';
 export * from './play-game/play-game.guard';
 
 export * from './+state';
+
+export * from './services';

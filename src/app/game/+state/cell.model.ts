@@ -1,15 +1,15 @@
 export class Cell {
-  private _isActive = false;
+  private _isAlive = false;
 
-  get isActive(): boolean {
-    return this._isActive;
+  get isAlive(): boolean {
+    return this._isAlive;
   }
 
-  set isActive(value: boolean) {
-    this._isActive = value;
+  constructor(isAlive: boolean) {
+    this._isAlive = isAlive;
   }
 
   reset() {
-    this._isActive = false;
+    this._isAlive = false;
   }
 }

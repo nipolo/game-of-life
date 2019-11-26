@@ -5,6 +5,7 @@ import { Cell } from './cell.model';
 
 export class GameOperationTypes {
   static readonly LOAD_GAME_DATA = registerType('[Game] GameDataLoaded');
+  static readonly LOAD_NEXT_GENERATION_CELLS = registerType('[Game] LoadNextGenerationCells');
   static readonly RESET_GAME_DATA = registerType('[Game] ResetGameData');
 }
 
@@ -15,6 +16,11 @@ export const loadGameData = createAction(
     columns: number,
     cells: Array<Array<Cell>>
   }>()
+);
+
+export const loadNextGenerationCells = createAction(
+  GameOperationTypes.LOAD_NEXT_GENERATION_CELLS,
+  props<{ cells: Array<Array<Cell>> }>()
 );
 
 export const resetGameData = createAction(

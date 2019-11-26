@@ -3,7 +3,7 @@ import { NgModule, InjectionToken } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 
 import { CoreModule } from './core/core.module';
-import { SelectGameComponent, PlayGameComponent, PlayGameGuard } from './game';
+import { SelectGameComponent, PlayGameComponent, PlayGameGuard, GameService } from './game';
 
 import { reducers } from './app.state';
 import { AppRoutingModule } from './app-routing.module';
@@ -31,7 +31,8 @@ export const APP_REDUCER = new InjectionToken<any>('App Reducer', {
     PlayGameComponent
   ],
   providers: [
-    PlayGameGuard
+    PlayGameGuard,
+    GameService
   ],
   bootstrap: [AppComponent]
 })

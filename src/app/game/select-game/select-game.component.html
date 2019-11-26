@@ -1,1 +1,13 @@
-<p>select-game works!</p>
+<div [formGroup]="gameDataForm">
+  <p>
+    <label>Rows</label>
+    <input type="text" formControlName="rows" /><br />
+  </p>
+  <p>
+    <label>Columns</label>
+    <input type="text" formControlName="columns" /><br />
+  </p>
+  <p>
+    <button [disabled]="!gameDataForm.valid" class="btn btn-primary" (click)="loadGameData()">Load game data</button>
+  </p>
+</div>
